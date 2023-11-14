@@ -1,0 +1,88 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    color: black;
+    height: 50px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .05);
+  }
+  
+  .navbar-logo {
+    font-size: 1.5rem;
+  }
+  
+  .menu-icon {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+  }
+  
+  .nav-menu {
+    width: 100%;
+    list-style-type: none;
+    display: flex;
+    color: black;
+    justify-content: space-evenly;
+
+
+  }
+  
+  .nav-menu.active {
+    display: block;
+  }
+  
+  @media screen and (max-width: 600px) {
+    .menu-icon {
+      display: block;
+    }
+  
+    .nav-menu {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+      position: absolute;
+      top: 60px;
+      left: 0;
+    }
+  }
+
+
+  .nav-menu li {
+    color: black;
+    font-size: large;
+    text-decoration: none;
+    position: relative;
+    display: inline-block; /* Allows the correct calculation of width */
+  }
+
+  .nav-menu li:active{
+    color: black;
+  }
+  
+  .nav-menu li:after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px; /* Thickness of the underline */
+    bottom: -5px; /* Distance of the underline from the text */
+    left: 0;
+    background-color: black; /* Color of the underline */
+    visibility: hidden;
+    transition: width 0.3s ease-in-out;
+  }
+  
+  .nav-menu li:hover:after {
+    visibility: visible;
+    width: 100%;
+  }
+
+  .logo img {
+    width: 50px;
+    height: 50px;
+}
+  
+
+  
+
+  
