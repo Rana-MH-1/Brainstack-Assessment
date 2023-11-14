@@ -1,13 +1,11 @@
 import axios from 'axios';
 import { locationType } from '../Utils/Types';
 
-// const instance = axios.create({
-//     baseURL: "https://mvvvip1.defas-fgi.de/mvv/",
-//   });
+const proxyUrl = "https://cors-proxy-l7uu.onrender.com/"
 
 export const FetchLocations = async(query : String)=>{
     try {
-          const {data} = await axios.get(`XML_STOPFINDER_REQUEST?%20language=de&outputFormat=RapidJSON&type_sf=any&name_sf=${query}`)  
+          const {data} = await axios.get(`${proxyUrl}https://mvvvip1.defas-fgi.de/mvv/XML_STOPFINDER_REQUEST?%20language=de&outputFormat=RapidJSON&type_sf=any&name_sf=${query}`)  
           return data?.locations?.map((location: locationType) => ({
             id: location.id,
             name: location.name,
